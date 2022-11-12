@@ -1,6 +1,6 @@
-# The Modern JavaScript Tutorial in Malay
+# Tutorial JavaScript Moden dalam Bahasa Melayu
 
-This repository hosts the translation of <https://javascript.info> in Malay.
+Repositori ini menempatkan terjemahan <https://javascript.info> dalam bahasa Melayu.
 
 
 **That's how you can contribute:**

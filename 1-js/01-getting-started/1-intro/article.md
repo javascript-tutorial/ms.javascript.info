@@ -1,122 +1,124 @@
-# An Introduction to JavaScript
+# Introduksi kepada JavaScript
 
-Let's see what's so special about JavaScript, what we can achieve with it, and what other technologies play well with it.
+Mari kita lihat apa yang istimewa tentang JavaScript, dan apa yang boleh kita capai dengannya dan teknologi lain yang boleh digunakan bersertanya.
 
-## What is JavaScript?
+## Apakah JavaScript?
+>
+*JavaScript* pada mulanya dicipta untuk "menjadikan halaman web berasa lebih hidup".
 
-*JavaScript* was initially created to "make web pages alive".
+Program dalam bahasa pengaturcaraan ini dipanggil *penskripan* atau *skrip*. Ia boleh ditulis terus dalam HTML halaman web dan dijalankan secara automatik apabila halaman dimuatkan.
 
-The programs in this language are called *scripts*. They can be written right in a web page's HTML and run automatically as the page loads.
+Skrip disediakan dan dilaksanakan sebagai teks biasa. Mereka tidak memerlukan persediaan atau kompilasi khas untuk dijalankan.
 
-Scripts are provided and executed as plain text. They don't need special preparation or compilation to run.
+Dalam aspek ini, JavaScript sangat berbeza daripada bahasa pengaturcaraan lain yang dipanggil [Java](https://ms.wikipedia.org/wiki/Java).
 
-In this aspect, JavaScript is very different from another language called [Java](https://en.wikipedia.org/wiki/Java_(programming_language)).
 
 ```smart header="Why is it called <u>Java</u>Script?"
-When JavaScript was created, it initially had another name: "LiveScript". But Java was very popular at that time, so it was decided that positioning a new language as a "younger brother" of Java would help.
+Apabila JavaScript dicipta, ia pada mulanya mempunyai nama lain: "LiveScript". Tetapi Java sangat popular pada masa itu, jadi diputuskan bahawa meletakkan bahasa baru sebagai "adik lelaki" Java akan membantu.
 
-But as it evolved, JavaScript became a fully independent language with its own specification called [ECMAScript](http://en.wikipedia.org/wiki/ECMAScript), and now it has no relation to Java at all.
+Tetapi apabila ia berkembang, JavaScript menjadi bahasa bebas sepenuhnya dengan spesifikasinya sendiri yang dipanggil [ECMAScript](https://ms.wikipedia.org/wiki/ECMAScript), dan kini ia tidak mempunyai kaitan langsung dengan Java.
 ```
 
 Today, JavaScript can execute not only in the browser, but also on the server, or actually on any device that has a special program called [the JavaScript engine](https://en.wikipedia.org/wiki/JavaScript_engine).
 
-The browser has an embedded engine sometimes called a "JavaScript virtual machine".
+Hari ini, JavaScript boleh melaksanakan bukan sahaja dalam pelayar internet, tetapi juga pada pelayan, atau apa sahaja yang mempunyai program khas yang dipanggil [enjin JavaScript](https://en.wikipedia.org/wiki/JavaScript_engine).
 
-Different engines have different "codenames". For example:
+Pelayar mempunyai enjin terbenam kadangkala dipanggil "mesin virtual JavaScript".
 
-- [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- in Chrome, Opera and Edge.
-- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- in Firefox.
-- ...There are other codenames like "Chakra" for IE, "JavaScriptCore", "Nitro" and "SquirrelFish" for Safari, etc.
+Enjin yang berbeza mempunyai "nama kod" yang berbeza. Sebagai contoh:
 
-The terms above are good to remember because they are used in developer articles on the internet. We'll use them too. For instance, if "a feature X is supported by V8", then it probably works in Chrome, Opera and Edge.
+- [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) --  Chrome, Opera and Edge.
+- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) --  Firefox.
+- ...Terdapat nama kod lain seperti "Chakra" untuk IE, "JavaScriptCore", "Nitro" dan "SquirrelFish" untuk Safari, dan lain lain.
 
-```smart header="How do engines work?"
+Istilah di atas adalah baik untuk diingati kerana ia digunakan dalam artikel pembangun di internet. Kami akan menggunakannya juga. Sebagai contoh, jika "ciri X disokong oleh V8", maka ia mungkin berfungsi dalam Chrome, Opera dan Edge.
 
-Engines are complicated. But the basics are easy.
+```smart header="Bagaimanakah enjin berfungsi?"
 
-1. The engine (embedded if it's a browser) reads ("parses") the script.
-2. Then it converts ("compiles") the script to machine code.
-3. And then the machine code runs, pretty fast.
+Enjin adalah rumit. Tetapi asasnya mudah.
 
-The engine applies optimizations at each step of the process. It even watches the compiled script as it runs, analyzes the data that flows through it, and further optimizes the machine code based on that knowledge.
+1. Enjin (terbenam jika ia adalah penyemak imbas or replayer internet) membaca ("menghuraikan") skrip.
+2. Kemudian ia menukar ("mengkompil") skrip kepada kod mesin.
+3. Dan kemudian kod mesin berjalan dengan pantas
+
+Enjin menggunakan pengoptimuman pada setiap langkah proses. Ia juga melihat skrip yang disusun semasa ia berjalan, menganalisis data yang mengalir melaluinya dan seterusnya mengoptimumkan kod mesin berdasarkan pengetahuan itu.
 ```
+## Apakah yang boleh dilakukan oleh JavaScript dalam penyemak imbas?
 
-## What can in-browser JavaScript do?
+JavaScript moden ialah bahasa pengaturcaraan "selamat". Ia tidak menyediakan akses peringkat rendah kepada memori atau CPU, kerana ia pada mulanya dicipta untuk pelayar yang tidak memerlukannya.
 
-Modern JavaScript is a "safe" programming language. It does not provide low-level access to memory or the CPU, because it was initially created for browsers which do not require it.
+Keupayaan JavaScript sangat bergantung pada persekitaran ia berjalan. Contohnya, [Node.js](https://wikipedia.org/wiki/Node.js) menyokong fungsi yang membolehkan JavaScript membaca/menulis fail sewenang-wenangnya, melaksanakan permintaan rangkaian, dan lain-lain.
 
-JavaScript's capabilities greatly depend on the environment it's running in. For instance, [Node.js](https://wikipedia.org/wiki/Node.js) supports functions that allow JavaScript to read/write arbitrary files, perform network requests, etc.
+JavaScript dalam penyemak imbas boleh melakukan semua yang berkaitan dengan manipulasi halaman web, interaksi dengan pengguna dan pelayan web.
 
-In-browser JavaScript can do everything related to webpage manipulation, interaction with the user, and the webserver.
+Sebagai contoh, JavaScript dalam penyemak imbas dapat:
 
-For instance, in-browser JavaScript is able to:
+- Tambah HTML baharu pada halaman, tukar kandungan sedia ada, ubah suai gaya.
+- Bertindak balas kepada tindakan pengguna, jalankan pada klik tetikus, pergerakan penunjuk, penekanan kekunci.
+- Hantar permintaan melalui rangkaian ke pelayan jauh, muat turun dan muat naik fail (yang dipanggil [AJAX](https://en.wikipedia.org/wiki/Ajax_(programming)) dan [COMET](https://en. wikipedia.org/wiki/Comet_(programming)) teknologi).
+- Dapatkan dan tetapkan kuki, tanya soalan kepada pelawat, tunjukkan mesej.
+- Ingat data pada bahagian klien ("storan tempatan").
 
-- Add new HTML to the page, change the existing content, modify styles.
-- React to user actions, run on mouse clicks, pointer movements, key presses.
-- Send requests over the network to remote servers, download and upload files (so-called [AJAX](https://en.wikipedia.org/wiki/Ajax_(programming)) and [COMET](https://en.wikipedia.org/wiki/Comet_(programming)) technologies).
-- Get and set cookies, ask questions to the visitor, show messages.
-- Remember the data on the client-side ("local storage").
+## Apa yang TIDAK BOLEH dilakukan oleh JavaScript dalam penyemak imbas?
 
-## What CAN'T in-browser JavaScript do?
+Kebolehan JavaScript dalam penyemak imbas adalah terhad untuk melindungi keselamatan pengguna. Matlamatnya adalah untuk menghalang halaman web jahat daripada mengakses maklumat peribadi atau merosakkan data pengguna.
 
-JavaScript's abilities in the browser are limited to protect the user's safety. The aim is to prevent an evil webpage from accessing private information or harming the user's data.
+Contoh sekatan tersebut termasuk:
 
-Examples of such restrictions include:
+- JavaScript pada halaman web tidak boleh membaca/menulis fail sewenang-wenangnya pada cakera keras, menyalinnya atau melaksanakan program. Ia tidak mempunyai akses langsung kepada fungsi OS.
 
-- JavaScript on a webpage may not read/write arbitrary files on the hard disk, copy them or execute programs. It has no direct access to OS functions.
+    Penyemak imbas moden membenarkannya berfungsi dengan fail, tetapi akses adalah terhad dan hanya diberikan jika pengguna melakukan tindakan tertentu, seperti "menjatuhkan" fail ke dalam tetingkap penyemak imbas atau memilihnya melalui teg `<input>`.
 
-    Modern browsers allow it to work with files, but the access is limited and only provided if the user does certain actions, like "dropping" a file into a browser window or selecting it via an `<input>` tag.
+    Terdapat cara untuk berinteraksi dengan kamera/mikrofon dan peranti lain, tetapi ia memerlukan kebenaran jelas pengguna. Jadi halaman yang didayakan JavaScript mungkin tidak secara senyap-senyap mendayakan kamera web, memerhati persekitaran dan menghantar maklumat kepada [NSA](https://en.wikipedia.org/wiki/National_Security_Agency).
+- Tab/tetingkap yang berbeza secara amnya tidak mengetahui satu sama lain. Kadangkala mereka melakukannya, contohnya apabila satu tetingkap menggunakan JavaScript untuk membuka yang lain. Tetapi walaupun dalam kes ini, JavaScript dari satu halaman mungkin tidak mengakses halaman lain jika ia datang dari tapak yang berbeza (dari domain, protokol atau port yang berbeza).
 
-    There are ways to interact with the camera/microphone and other devices, but they require a user's explicit permission. So a JavaScript-enabled page may not sneakily enable a web-camera, observe the surroundings and send the information to the [NSA](https://en.wikipedia.org/wiki/National_Security_Agency).
-- Different tabs/windows generally do not know about each other. Sometimes they do, for example when one window uses JavaScript to open the other one. But even in this case, JavaScript from one page may not access the other page if they come from different sites (from a different domain, protocol or port).
+    Ini dipanggil "Dasar Asal Sama". Untuk mengatasinya, *kedua-dua halaman* mesti bersetuju untuk pertukaran data dan mesti mengandungi kod JavaScript khas yang mengendalikannya. Kami akan membincangkannya dalam tutorial.
 
-    This is called the "Same Origin Policy". To work around that, *both pages* must agree for data exchange and must contain special JavaScript code that handles it. We'll cover that in the tutorial.
-
-    This limitation is, again, for the user's safety. A page from `http://anysite.com` which a user has opened must not be able to access another browser tab with the URL `http://gmail.com`, for example, and steal information from there.
-- JavaScript can easily communicate over the net to the server where the current page came from. But its ability to receive data from other sites/domains is crippled. Though possible, it requires explicit agreement (expressed in HTTP headers) from the remote side. Once again, that's a safety limitation.
+    Had ini, sekali lagi, untuk keselamatan pengguna. Halaman daripada `http://anysite.com` yang dibuka oleh pengguna mestilah tidak boleh mengakses tab penyemak imbas lain dengan URL `http://gmail.com`, sebagai contoh, dan mencuri maklumat dari sana.
+- JavaScript boleh berkomunikasi dengan mudah melalui jaring ke pelayan tempat asal halaman semasa. Tetapi keupayaannya untuk menerima data daripada tapak/domain lain adalah lumpuh. Walaupun boleh, ia memerlukan persetujuan yang jelas (dinyatakan dalam pengepala HTTP) dari bahagian jauh. Sekali lagi, itu adalah had keselamatan.
 
 ![](limitations.svg)
 
-Such limitations do not exist if JavaScript is used outside of the browser, for example on a server. Modern browsers also allow plugins/extensions which may ask for extended permissions.
+Had limitasi tidak wujud jika JavaScript digunakan di luar penyemak imbas, contohnya pada pelayan. Pelayar moden juga membenarkan pemalam/sambungan yang mungkin meminta kebenaran lanjutan.
 
-## What makes JavaScript unique?
+## Apakah yang menjadikan JavaScript unik atau istimewa?
 
-There are at least *three* great things about JavaScript:
+Terdapat sekurang-kurangnya *tiga* perkara hebat tentang JavaScript:
 
-```compare
-+ Full integration with HTML/CSS.
-+ Simple things are done simply.
-+ Supported by all major browsers and enabled by default.
+```bandingkan
++ Penyepaduan penuh dengan HTML/CSS.
++ Perkara mudah dilakukan secara ringkas.
++ Disokong oleh semua pelayar utama dan didayakan secara lalai.
 ```
-JavaScript is the only browser technology that combines these three things.
+JavaScript adalah satu-satunya teknologi pelayar yang menggabungkan tiga perkara ini.
 
-That's what makes JavaScript unique. That's why it's the most widespread tool for creating browser interfaces.
+Itulah yang menjadikan JavaScript unik. Itulah sebabnya ia adalah alat yang paling meluas untuk mencipta antara muka penyemak imbas.
 
-That said, JavaScript can be used to create servers, mobile applications, etc.
+Walau bagaimanapun, JavaScript boleh digunakan untuk membuat pelayan, aplikasi mudah alih, dan lain lain.
 
-## Languages "over" JavaScript
+## Bahasa pengaturcaraan yang berbeza daripda JavaScript
 
-The syntax of JavaScript does not suit everyone's needs. Different people want different features.
+Sintaks JavaScript tidak sesuai dengan keperluan semua orang. Orang yang berbeza mahukan ciri yang berbeza.
 
-That's to be expected, because projects and requirements are different for everyone.
+Itu yang diharapkan, kerana projek dan keperluan adalah berbeza untuk setiap orang.
 
-So, recently a plethora of new languages appeared, which are *transpiled* (converted) to JavaScript before they run in the browser.
+Jadi, baru-baru ini banyak bahasa baharu muncul, yang  (ditukar) kepada JavaScript sebelum ia dijalankan dalam penyemak imbas.
 
-Modern tools make the transpilation very fast and transparent, actually allowing developers to code in another language and auto-converting it "under the hood".
+Alat moden menjadikan transpilasi sangat pantas dan telus, sebenarnya membenarkan pembangun mengodkan dalam bahasa lain dan menukarnya secara automatik "di bawah atap".
 
-Examples of such languages:
+Contoh bahasa tersebut:
 
-- [CoffeeScript](https://coffeescript.org/) is "syntactic sugar" for JavaScript. It introduces shorter syntax, allowing us to write clearer and more precise code. Usually, Ruby devs like it.
-- [TypeScript](https://www.typescriptlang.org/) is concentrated on adding "strict data typing" to simplify the development and support of complex systems. It is developed by Microsoft.
-- [Flow](https://flow.org/) also adds data typing, but in a different way. Developed by Facebook.
-- [Dart](https://www.dartlang.org/) is a standalone language that has its own engine that runs in non-browser environments (like mobile apps), but also can be transpiled to JavaScript. Developed by Google.
-- [Brython](https://brython.info/) is a Python transpiler to JavaScript that enables the writing of applications in pure Python without JavaScript.
-- [Kotlin](https://kotlinlang.org/docs/reference/js-overview.html) is a modern, concise and safe programming language that can target the browser or Node.
+- [CoffeeScript](https://coffeescript.org/) ialah "gula sintaksis" untuk JavaScript. Ia memperkenalkan sintaks yang lebih pendek, membolehkan kami menulis kod yang lebih jelas dan lebih tepat. Biasanya, pengembang Ruby menyukainya.
+- [TypeScript](https://www.typescriptlang.org/) menumpukan pada penambahan "penaipan data yang ketat" untuk memudahkan pembangunan dan sokongan sistem yang kompleks. Ia dibangunkan oleh Microsoft.
+- [Flow](https://flow.org/) juga menambahkan penaipan data, tetapi dengan cara yang berbeza. Dibangunkan oleh Facebook.
+- [Dart](https://www.dartlang.org/) ialah bahasa kendiri yang mempunyai enjin sendiri yang berjalan dalam persekitaran bukan penyemak imbas (seperti apl mudah alih), tetapi juga boleh ditranspilkan kepada JavaScript. Dibangunkan oleh Google.
+- [Brython](https://brython.info/) ialah transpiler Python kepada JavaScript yang membolehkan penulisan aplikasi dalam Python tulen tanpa JavaScript.
+- [Kotlin](https://kotlinlang.org/docs/reference/js-overview.html) ialah bahasa pengaturcaraan moden, ringkas dan selamat yang boleh menyasarkan penyemak imbas atau Node.
 
-There are more. Of course, even if we use one of these transpiled languages, we should also know JavaScript to really understand what we're doing.
+Terdapat banyak lagi. Sudah tentu, walaupun kita menggunakan salah satu daripada bahasa transpil ini, kita juga harus mengetahui JavaScript untuk benar-benar memahami perkara yang kita lakukan.
 
-## Summary
+- ## Ringkasan
 
-- JavaScript was initially created as a browser-only language, but it is now used in many other environments as well.
-- Today, JavaScript has a unique position as the most widely-adopted browser language, fully integrated with HTML/CSS.
-- There are many languages that get "transpiled" to JavaScript and provide certain features. It is recommended to take a look at them, at least briefly, after mastering JavaScript.
+- JavaScript pada mulanya dicipta sebagai bahasa pelayar sahaja, tetapi ia kini digunakan dalam banyak persekitaran lain juga.
+- Hari ini, JavaScript mempunyai kedudukan unik sebagai bahasa penyemak imbas yang paling banyak diterima pakai, disepadukan sepenuhnya dengan HTML/CSS.
+- Terdapat banyak bahasa yang "dialihkan" kepada JavaScript dan mempunyai ciri tertentu. Adalah disyorkan untuk melihatnya, sekurang-kurangnya secara ringkas, selepas menguasai JavaScript.
