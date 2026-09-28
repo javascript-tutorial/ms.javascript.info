@@ -74,8 +74,15 @@ Contoh sekatan tersebut termasuk:
 
     Ini dipanggil "Dasar Asal Sama". Untuk mengatasinya, *kedua-dua halaman* mesti bersetuju untuk pertukaran data dan mesti mengandungi kod JavaScript khas yang mengendalikannya. Kami akan membincangkannya dalam tutorial.
 
+<<<<<<< HEAD
     Had ini, sekali lagi, untuk keselamatan pengguna. Halaman daripada `http://anysite.com` yang dibuka oleh pengguna mestilah tidak boleh mengakses tab penyemak imbas lain dengan URL `http://gmail.com`, sebagai contoh, dan mencuri maklumat dari sana.
 - JavaScript boleh berkomunikasi dengan mudah melalui jaring ke pelayan tempat asal halaman semasa. Tetapi keupayaannya untuk menerima data daripada tapak/domain lain adalah lumpuh. Walaupun boleh, ia memerlukan persetujuan yang jelas (dinyatakan dalam pengepala HTTP) dari bahagian jauh. Sekali lagi, itu adalah had keselamatan.
+=======
+    This is called the "Same Origin Policy". To work around that, *both pages* must agree for data exchange and must contain special JavaScript code that handles it. We'll cover that in the tutorial.
+
+    This limitation is, again, for the user's safety. A page from `http://anysite.com` which a user has opened must not be able to access another browser tab with the URL `http://gmail.com`, for example, and steal information from there.
+- JavaScript can easily communicate over the net to the server where the current page came from. But its ability to receive data from other sites/domains is severely limited. Though possible, it requires explicit agreement (expressed in HTTP headers) from the remote side. Once again, that's a safety limitation.
+>>>>>>> 20208769e528337949e946f526534d61d38bac47
 
 ![](limitations.svg)
 
